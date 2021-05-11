@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, redirect
 from app.forms import WorkoutForm
 
 workout_routes = Blueprint('workouts', __name__, url_prefix='/workouts')
