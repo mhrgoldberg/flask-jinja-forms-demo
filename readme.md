@@ -43,3 +43,16 @@
 2. add `workouts.py` file and move routes from app over
 3. add `__init__.py` file and import workouts.py
 4. Import `routes` module into the app `__init__` and register the blueprint
+
+## Forms
+
+1. Install flask_wtf
+
+```bash
+pipenv install flask_wtf
+```
+
+1. Create a `forms` directory in the app module
+2. create `workout_form.py` in the directory
+3. create `__init__.py` and import the workout_form
+4. Import form into routes and refactor the routes to utilize the forms

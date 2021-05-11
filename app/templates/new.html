@@ -2,26 +2,13 @@
 <h1>New Workout</h1>
 <form method="POST" action="/workouts/new">
 	<div>
-		<label for="Title">
-			Title
-			<input type="text" name="title" id="Title" />
-		</label>
+		{{ form.csrf_token }}
+		{{form.title.label }} {{form.title }}
+	<div>
+		{{ form.duration.label }} {{form.duration }}
 	</div>
 	<div>
-		<label for="Duration">
-			Duration
-			<input type="integer" name="duration" id="duration" />
-		</label>
-	</div>
-	<div>
-		<label for="exertion_level">
-			Exertion
-			<select name="exertion_level" id="exertion_level">
-				<option value="Easy">Easy</option>
-				<option value="Moderate">Moderate</option>
-				<option value="Hard">Hard</option>
-			</select>
-		</label>
+		{{form.exertion_level.label }} {{ form.exertion_level }}
 		<div>
 			<button type="submit">Submit</button>
 		</div>

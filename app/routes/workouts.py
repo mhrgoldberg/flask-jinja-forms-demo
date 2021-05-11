@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect
-
+from app.forms import WorkoutForm
 
 workout_routes = Blueprint('workouts', __name__, url_prefix='/workouts')
 
@@ -23,34 +23,32 @@ def get_single_workout(id):
 	return render_template('show.html', workout=workouts[id] )
 
 
-@workout_routes.route('/new')
-def get_workout_form():
-	"""
-	Serves up a new_workout form template
-	"""
-	return render_template('new.html')
+# @workout_routes.route('/new')
+# def get_workout_form():
+# 	"""
+# 	Serves up a new_workout form template
+# 	"""
+# 	form = WorkoutForm()
+# 	return render_template('new.html', form=form)
 	
 
-@workout_routes.route('/new', methods=['POST'])
+@workout_routes.route('/new', methods=['GET', 'POST'])
 def add_new_workout():
 	"""
 	Validates form data and adds to DB
 	"""
-	form_data = request.form
+	form = WorkoutForm()
 
-	if (
-		form_data['title'] and 
-		form_data['duration'] and 
-		form_data['exertion_level']
-		):
+	if form.validate_on_submit():
 		i = len(workouts) + 1
 		new_workout = {
 			'id': i,
-			'title': form_data['title'],
-			'duration': int(form_data['duration']),
-			'exertion_level': form_data['exertion_level']
+			'title': form.data['title'],
+			'duration': form.data['duration'],
+			'exertion_level': form.data['exertion_level']
 		}
 		workouts[i] = new_workout
 		print(workouts)
 		return redirect(f'/workouts/{i}')
-	return "There was a error submiting your form. Please try again!"
+
+	return render_template('new.html', form=form)
