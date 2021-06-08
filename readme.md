@@ -36,3 +36,10 @@
 3. Update `get` route to use a Jinja index template
 4. Create `post` route to create a workout
 5. Create a `new_workout` template
+
+## Blueprints
+
+1. Create a `routes` directory in the app module
+2. add `workouts.py` file and move routes from app over
+3. add `__init__.py` file and import workouts.py
+4. Import `routes` module into the app `__init__` and register the blueprint
