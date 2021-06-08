@@ -27,11 +27,9 @@
 ## Jinja
 
 1. Install jinja2 locally with:
-
    ```bash
    pipenv install jinja2
    ```
-
 2. Create `templates` directory in the app module
 3. Update `get` route to use a Jinja index template
 4. Create `post` route to create a workout
