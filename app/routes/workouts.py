@@ -58,5 +58,6 @@ def add_new_workout():
         workouts[i] = new_workout
         print(workouts)
         return redirect(f'/workouts/{i}')
-
+    # if form.errors:
+    #     return form.errors
     return render_template('new.html', form=form)
