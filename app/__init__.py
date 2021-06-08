@@ -7,13 +7,10 @@ app.config.from_object(Config)
 
 # print(app.config['SECRET_KEY'])
 
+
 @app.route('/')
 def index():
-	"""
-	A simple route to display all workouts
-	"""
-	workouts_list = [workout for workout in workouts.values()]
-	return render_template('index.html', workouts=workouts_list)
+    return "Go to /workouts to use the app!"
 
 
 app.register_blueprint(workout_routes)

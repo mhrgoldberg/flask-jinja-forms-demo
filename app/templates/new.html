@@ -1,17 +1,17 @@
 {% extends "base.html" %} {% block content %}
 <h1>New Workout</h1>
 <form method="POST" action="/workouts/new">
-	<div>
-		{{ form.csrf_token }}
-		{{form.title.label }} {{form.title }}
-	<div>
-		{{ form.duration.label }} {{form.duration }}
-	</div>
-	<div>
-		{{form.exertion_level.label }} {{ form.exertion_level }}
-	</div>
-	<div>
-		<button type="submit">Submit</button>
-	</div>
+  <div>
+    {{ form.csrf_token }}
+    {{form.title.label }} {{form.title }}
+  <div>
+    {{ form.duration.label }} {{form.duration }}
+  </div>
+  <div>
+    {{form.exertion_level.label }} {{ form.exertion_level }}
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
 </form>
 {% endblock %}
