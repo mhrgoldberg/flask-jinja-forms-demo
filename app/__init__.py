@@ -7,7 +7,6 @@ app.config.from_object(Config)
 
 # print(app.config['SECRET_KEY'])
 
-
 @app.route('/')
 def index():
     return "Go to /workouts to use the app!"
