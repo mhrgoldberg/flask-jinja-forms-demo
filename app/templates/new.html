@@ -3,15 +3,15 @@
 <form method="POST" action="/workouts/new">
   <div>
     {{ form.csrf_token }}
-    {{form.title.label }} {{form.title }}
+    {{ form.title.label }} {{ form.title }}
   <div>
-    {{ form.duration.label }} {{form.duration }}
+    {{ form.duration.label }} {{ form.duration }}
   </div>
   <div>
-    {{form.exertion_level.label }} {{ form.exertion_level }}
+    {{ form.exertion_level.label }} {{ form.exertion_level }}
   </div>
   <div>
-    {{form.submit}}
+    {{ form.submit }}
   </div>
 </form>
 {% endblock %}
